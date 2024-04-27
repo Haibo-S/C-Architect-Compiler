@@ -1,0 +1,67 @@
+int abs(int n){
+    int m = 0;
+    if(n < 0){
+        m = 0 - n;
+    }else{
+        m = n;
+    }
+    return m;
+}
+
+int tieBreak(int a, int b){
+    int m = 0;
+
+    int tempA = 0;
+    int tempB = 0;
+
+    tempA = abs(a);
+    tempB = abs(b);
+
+    if(tempA != tempB){
+        if(tempA < tempB){
+            m = a;
+        }else{
+            m = b;
+        }
+    }else{
+        if(a < b){
+            m = a;
+        }else{
+            m = b;
+        }
+    }
+    return m;
+}
+
+int wain(int* a, int b){
+    int* frequency = NULL;
+    int i = 0;
+    int index = 0;
+    int mostFrequent = 0;
+    int temp = 0;
+    mostFrequent = *(a);
+    frequency = new int[483];
+
+    while(index < b){
+        *(frequency + index) = 0;
+        index = index + 1;
+    }
+
+    index = 0;
+    while(index < b){
+        i = *(a+index);
+        *(frequency + i + 241) = *(frequency + i + 241) + 1;
+        if(*(frequency + i + 241) > *(frequency + mostFrequent + 241)){
+            mostFrequent = i;
+        }else{
+            if(*(frequency + i + 241) == *(frequency + mostFrequent + 241)){
+                mostFrequent = tieBreak(mostFrequent, i);
+            }else{}
+        }
+        
+        index = index + 1;
+    }
+
+    delete [] frequency;
+    return mostFrequent;
+}
