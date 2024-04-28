@@ -1,2 +1,4 @@
+Printed in Console: 
+
 ERROR: Invalid State: 
 ERROR: Error: No such transition exists.

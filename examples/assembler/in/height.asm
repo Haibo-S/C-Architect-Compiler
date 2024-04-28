@@ -1,3 +1,4 @@
+; Height of a Binary Tree (Written in MIPS Assembly)
 ; procedure height(): computes height of a binary tree
 ;
 ; parameter: $1 (base index), $4 (current index)

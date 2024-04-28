@@ -644,7 +644,7 @@ void process(Node* root, unordered_map<string, int>& offsetTable){
     }else if(root->data == "statement DELETE LBRACK RBRACK expr SEMI"){
         counter += 1;
         process(root->getChild("expr",1), offsetTable);
-        string label = "fuck"+to_string(counter);
+        string label = "label"+to_string(counter);
         Beq(3,11,label);
         Add(1,3,0);
         push(31);
@@ -830,7 +830,7 @@ void slt(int d, int s, int t){
     cout << "slt $" << d << ", $" << s << ", $" << t << endl;
 }
 
-// some fucking semantic analysis
+// semantic analysis
 
 void annotateTypes(Node* root, Procedure curProc, ProcedureTable& table){
     for(size_t i = 0; i < root->children.size(); i++){
@@ -1014,7 +1014,7 @@ void checkStatements(Node* root){
 }
 
 
-// some fucking paring algorithm
+// paring algorithm
 
 void parse(DFA& dfa){
     while(inputs.size() > 0){
