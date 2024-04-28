@@ -429,18 +429,18 @@ class Assembler{
     for (int i = 31; i >= 0; --i) {
       str += ((encode & (1 << i)) ? '1' : '0');
     }
-    char dida = 0;
-    int weight = 7;
+    char digit = 0;
+    int power = 7;
     for(size_t i = 0; i < str.size(); i++){
       char c = str[i];
       if(c == '1'){
-          dida += pow(2, weight);
+          digit += pow(2, power);
       }
-      weight--;
-      if(weight < 0){
-          cout << dida;
-          dida = 0;
-          weight = 7;
+      power--;
+      if(power < 0){
+          cout << digit;
+          digit = 0;
+          power = 7;
       }
     }
   }
